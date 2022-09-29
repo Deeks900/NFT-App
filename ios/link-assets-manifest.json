@@ -1,0 +1,25 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "src/assets/fonts/Aref_Ruqaa_Ink/ArefRuqaaInk-Bold.ttf",
+      "sha1": "7ecfb619b883ed88ce6a9cfdb31a1a92604b0193"
+    },
+    {
+      "path": "src/assets/fonts/Aref_Ruqaa_Ink/ArefRuqaaInk-Regular.ttf",
+      "sha1": "e026e22ef94706415c4371c1bae8730cceefc005"
+    },
+    {
+      "path": "src/assets/fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf",
+      "sha1": "f8081cbeceb2e69fdffca2348b2c9e0933cd52b5"
+    },
+    {
+      "path": "src/assets/fonts/Libre_Baskerville/LibreBaskerville-Italic.ttf",
+      "sha1": "1c4a7eed5b5ffeed2818cc75c16825596d64ab67"
+    },
+    {
+      "path": "src/assets/fonts/Libre_Baskerville/LibreBaskerville-Regular.ttf",
+      "sha1": "ed706d27473a09536d94fed8fee4809fda713759"
+    }
+  ]
+}
