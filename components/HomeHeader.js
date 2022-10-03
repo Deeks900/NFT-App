@@ -1,10 +1,81 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text, Image, TextInput } from 'react-native'
+import {COLORS, FONTS, SIZES, assets} from '../constants';
 
-const HomeHeader = () => {
+const HomeHeader = ({onSearch}) => {
   return (
-    <View>
-      <Text>HomeHeader</Text>
+
+    <View style={{
+      backgroundColor: COLORS.primary,
+      padding: SIZES.font
+    }}>
+
+      {/* <Another View */}
+      <View style={{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+      }}>
+
+        <Image 
+         source={assets.logo}
+         resizeMode = "contain"
+         style={{width: 45, height: 45}}
+        />
+
+      </View>
+
+      {/* Another View */}
+      <View style={{width: 45, height: 45}}>
+        
+        <Image 
+         source={assets.person01}
+         resizeMode="contain"
+         style={{width: '100%', height:'100%'}}
+        />
+
+        <Image 
+         source={assets.badge}
+         resizeMode="contain"
+         style={{position:'absolute', width:15, height:15, bottom:0, right:0}}
+        />
+
+      </View>
+
+      {/* Another View outside the above View */}
+      <View style={{ marginVertical: SIZES.font }}>
+      <Text style={{fontFamily:FONTS.font1, fontSize:SIZES.small, color:COLORS.white}}>
+        Hello, Victoria 👋 
+      </Text>
+
+      <Text style={{fontFamily:FONTS.font3, fontSize:SIZES.large, color:COLORS.white, marginTop:SIZES.base/2}}>
+        Let's find a masterpiece
+      </Text>
+      </View>
+
+      <View style={{marginTop: SIZES.font}}>
+        <View style={{
+          width: '100%',
+          borderRadius: SIZES.font,
+          backgroundColor: COLORS.gray,
+          flexDirection:'row',
+          alignItems:'center',
+          paddingHorizontal:SIZES.font,
+          paddingVertical: SIZES.small-2,
+        }}>
+          <Image
+          source={assets.search}
+          resizeMode="contain"
+          style={{width: 20, height: 20, marginRight:SIZES.base}}
+           />
+           <TextInput
+           placeholder='Search NFTs'
+           style={{flex:1, color:'white', fontFamily:FONTS.font2, fontSize:FONTS.large}}
+           onChangeText={onSearch}
+            />
+        </View>
+      </View>
+
+      
     </View>
   )
 }

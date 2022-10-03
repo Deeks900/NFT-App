@@ -7,6 +7,21 @@ import { NFTData, COLORS } from '../constants'
 //Flat list is like a map to render a list.It uses the concept of lazyLoading to save resources.It renders the list when screen is in view and removes it when screen is offview
 
 const Home = () => {
+  const [nftData, setNftData] = useState(NFTData);
+  const handleSearch = (value)=>{
+    if(!value.length) return setNftData(NFTData);
+
+    const filteredData = NFTData.filter((item)=>
+      item.name.toLowerCase().includes(value.toLowerCase())
+      );
+
+      if (filteredData.length === 0) {
+        setNftData(NFTData);
+      } else {
+        setNftData(filteredData);
+      }
+  }
+
   return (
     <SafeAreaView style={{flex:1}}>
       <FocusedStatusBar backgroundColor={COLORS.primary}/>
@@ -21,11 +36,11 @@ const Home = () => {
               {/* showsVerticalScrollIndicator is used to remove that ugly vertical scroll bar */}
               {/* ListHeaderComponent is used to place any component before the starting of this list */}
               <FlatList 
-               data={NFTData}
+               data={nftData}
                renderItem={({item})=><NFTCard data={item}/>}
                keyExtractor={(item)=>item.id}
                showsVerticalScrollIndicator={false}
-               ListHeaderComponent={<HomeHeader />}
+               ListHeaderComponent={<HomeHeader onSearch={handleSearch}/>}
               />
           </View>
 
